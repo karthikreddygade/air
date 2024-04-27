@@ -1,0 +1,13 @@
+{% extends "base1.html" %}
+
+{% block content %}
+
+    <div class="from-to-container">
+        <div class="from-feild" id="from"><input type="text" placeholder="From" required></div>
+        <div class="to-feild" id="to"><input type="text" placeholder="To" required></div>
+        <div class="date"><input type="date" placeholder=" Select-Date" required></div>
+        <div class="returndate"><input type="date" placeholder=" Select-Date" required></div>
+        <div class="searchFlight-button"><a href="{% url 'ticket' %}" class="button">Search Flight</a></div>
+    </div>
+{% endblock %}
+

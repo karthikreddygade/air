@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    /* Ticket styles */
+    .ticket-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        margin-top: 20px;
+    }
+
+    .ticket {
+        width: 300px;
+        padding: 20px;
+        margin: 10px;
+        border: 2px solid #333;
+        border-radius: 10px;
+        background-color: #f8f8f8;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .ticket h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+
+    .ticket p {
+        font-size: 16px;
+        margin-bottom: 5px;
+    }
+
+    .ticket .searchFlight-button button {
+        background-color: #5585b5;
+        color: white;
+        font-weight: bold;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .ticket .searchFlight-button button:hover {
+        background-color:  #5585b5;
+    }
+</style>
+
+<div class="ticket-container">
+    {% for ticket in tickets %}
+    <div class="ticket">
+        <h2>{{ ticket.source }} to {{ ticket.destination }}</h2>
+        <p><strong>Start Date:</strong> {{ ticket.start_date }}</p>
+        <p><strong>Time:</strong> {{ ticket.time }}</p>
+        <p><strong>Cost:</strong> ${{ ticket.cost }}</p>
+        <div class="searchFlight-button"><a href="{% url 'payment'%}"><button>Book</button></a></div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

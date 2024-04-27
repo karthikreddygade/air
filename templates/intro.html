@@ -1,0 +1,67 @@
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Viman</title>
+    <style>
+        body {
+            background-image: url('{% static "intro.jpg" %}');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f8f8f8;
+        }
+        .content {
+            text-align: top;
+            padding: 50px;
+            border-radius: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: absolute;
+            top: 50%;
+            left: 19%;
+            transform: translate(-50%, -50%);
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        p {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #ff6200;
+            color: white;
+            padding: 15px 25px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 30px; /* Increased border radius */
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .button:hover {
+            background-color: #ff7f40;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Welcome to Viman Airlines</h1>
+        <p>Experience the joy of flying with us. We offer top-notch service,</p>
+        <p>comfortable seating, and a variety of in-flight amenities. </p>
+        <p>Join us for an unforgettable journey.</p>
+        <button onclick="location.href='{% url 'home' %}'" class="button">Get Started</button>
+    </div>
+</body>
+</html>
+
+
+

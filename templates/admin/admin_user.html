@@ -1,0 +1,148 @@
+{% load static %}
+<html>
+<head>
+    <title>{% block title %}Viman{% endblock %}</title>
+    <style>
+        header img {
+            height: 80px;
+            margin-left: 40px;
+            border-radius: 100%;
+        }
+
+        body {
+            height: 125vh;
+            font-family: sans-serif;
+            margin-top: 80px;
+            padding: 30px;
+            background:linear-gradient(to top, #bdc2e8 0%, #bdc2e8 1%, #e6dee9 100%);
+        }
+
+        pre {
+            font-size: 30px;
+            margin-left: 500px;
+            color: white; /* White text for contrast */
+        }
+
+        main {
+            color: black;
+        }
+
+        header {
+            background-color: #5585b5;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2); /* Soft shadow */
+        }
+
+        header * {
+            display: inline;
+        }
+
+        header li {
+            margin: 20px;
+        }
+
+        header li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav {
+            margin-left: 0px;
+        }
+
+        header li:hover {
+            background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white on hover */
+            padding: 20px;
+            border-radius: 30%;
+            color: black;
+        }
+
+        main {
+            color: black;
+        }
+
+        .from-to-container {
+            height: 300px;
+            margin-top: 150px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            border-width: 4px;
+            border-radius: 50px;
+            border: 4px solid black;
+            background: linear-gradient(109.6deg, rgb(204, 228, 247) 11.2%, rgb(237, 246, 250) 100.2%);
+
+        }
+
+        .from-to-container input {
+            height: 75px;
+            width: 200px;
+            border: none;
+            border-radius: 30px;
+            background: linear-gradient(178.6deg, rgb(232, 245, 253) 3.3%, rgb(252, 253, 255) 109.6%);
+            padding: 10px;
+        }
+
+        .searchFlight-button a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color:#5585b5 ;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .searchFlight-button a:hover {
+            background-color:#79c2d0;
+        }
+
+        footer {
+            background-color: rgba(255, 255, 255, 0.8); /* White with some transparency */
+            color: black;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<header>
+
+
+    <nav>
+        <ul>
+           {% if user_logged_in %}
+                <li><a href="{% url 'passengerlist' %}">Passenger List</a></li>
+                <li><a href="{% url 'ticketlist' %}">Ticket List</a></li>
+                <li><a href="{% url 'Logout' %}">Log out</a></li>
+            {% endif %}
+
+
+        </ul>
+         <pre><i>{{ username }}</i></pre>
+    </nav>
+</header>
+<main>
+    {% block content %}
+
+    {% endblock %}
+</main>
+<footer>
+    <p>© 2024 Viman. All rights reserved.</p>
+</footer>
+</body>
+</html>

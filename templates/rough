@@ -1,0 +1,5 @@
+
+    user_email = request.user.email
+    subject = 'Welcome to our website!'
+    message = f'Hello {username}, welcome to our website!'
+    send_mail(subject, message, settings.DEFAULT_FROM_EMAIL, [user_email])

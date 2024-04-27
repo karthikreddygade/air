@@ -1,0 +1,105 @@
+{% extends "base.html" %}
+
+{% block content %}
+<style>
+    .hero {
+
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Reduced height for better layout */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    padding: 2rem;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Added for readability */
+}
+
+.hero-content h2 {
+    font-size: 3rem; /* Slightly reduced for balance */
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #5585b5;
+    color: #edf6f9;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+    .features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.feature {
+    text-align: center;
+    flex: 1;
+}
+
+.feature i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.feature p {
+    font-size: 1rem;
+}
+
+
+</style>
+
+<section class="hero">
+        <div class="hero-content">
+            <h2>Book Your Airline Tickets Now!</h2>
+            <p>Travel conveniently with our easy-to-use bus reservation system.</p>
+            <a href="Register" class="btn">Book Now</a>
+        </div>
+    </section>
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-bus"></i>
+            <h3>Wide Range of Routes</h3>
+            <p>Choose from a variety of routes to your destination.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-ticket-alt"></i>
+            <h3>Easy Booking Process</h3>
+            <p>Our booking process is simple and hassle-free.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-clock"></i>
+            <h3>24/7 Availability</h3>
+            <p>Book your tickets anytime, anywhere, round the clock.</p>
+        </div>
+    </section>
+
+{% endblock %}
+
+

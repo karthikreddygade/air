@@ -1,0 +1,67 @@
+{% extends "admin/base2.html" %}
+
+{% block content %}
+<style>
+    /* Table styles */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    /* Button styles */
+    .searchFlight-button button {
+        background-color: #5585b5;
+        color: white;
+        font-weight: bold;
+        width: 100px;
+        height: 40px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .searchFlight-button button:hover {
+        background-color:  #5585b5;
+    }
+</style>
+
+<table>
+    <thead>
+        <tr>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Start Date</th>
+            <th>Time</th>
+            <th>Cost</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.source }}</td>
+            <td>{{ ticket.destination }}</td>
+            <td>{{ ticket.start_date }}</td>
+            <td>{{ ticket.time }}</td>
+            <td>${{ ticket.cost }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
